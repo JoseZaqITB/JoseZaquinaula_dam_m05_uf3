@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class EatRabbitSim {
     // Vars
-    public static final int CONILLS = 1, LLOPS = 10, COLUMNES = 16, FILES = 16, ROQUES = 10, AIGUA = 15;
+    public static final int CONILLS = 5, LLOPS = 3, COLUMNES = 16, FILES = 16, ROQUES = 10, AIGUA = 15;
     public static ArrayList<Animal> animals = new ArrayList<>();
     public static Tile[][] tauler = new Tile[COLUMNES][FILES];
     private int totalAnimals, torns = 0;
@@ -12,10 +12,13 @@ public class EatRabbitSim {
     public void inicialitza(){
         for (int i = 0; i < COLUMNES ; i++) {
             for (int j = 0; j < FILES; j++) {
-                int terreny = (int) (Math.random() * 100), t = 0;
+                int terreny = (int) (Math.random() * 100);
+                int t = 0;
                 int animal = (int) (Math.random() * 100);
-                if (terreny < ROQUES) t = 1;
-                else if (terreny < ROQUES + AIGUA) t = 2;
+                if (terreny < ROQUES)
+                    t = 1;
+                else if (terreny < ROQUES + AIGUA)
+                    t = 2;
                 Animal a = null;
                 if (t == 2 || animal >= LLOPS + CONILLS) {
                     tauler[i][j] = new Tile(t);

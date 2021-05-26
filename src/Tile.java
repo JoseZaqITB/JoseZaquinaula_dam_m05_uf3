@@ -15,8 +15,20 @@ class Tile {
         if(terreny == 2) return true;
         return false;
     }
+    public boolean esRock() {
+        if(terreny == 1) return true;
+        return false;
+    }
     public boolean esAnimal(){
         if(animal != null) return true;
+        return false;
+    }
+    public boolean esRabbit(){
+        if(animal instanceof Rabbit) return true;
+        return false;
+    }
+    public boolean esFox(){
+        if(animal instanceof Fox) return true;
         return false;
     }
     public Animal getAnimal() { return this.animal; }
