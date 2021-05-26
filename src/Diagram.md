@@ -3,8 +3,10 @@ classDiagram
  class Animal{
   int x
   int y
+  boolean mort
   String  toString()
   void mou()
+  void mor()
  }
  class EatRabbitSim{
     int CONILLS
@@ -23,7 +25,9 @@ classDiagram
  }
  
  class Fox{
+    int energia
     String toString()
+    void mou()
  }
  
  class Rabbit{
@@ -39,6 +43,9 @@ classDiagram
     void setAnimal()
     String toString()
     Animal getAnimal()
+    boolean esFox()
+    boolean esRabbit()
+    boolean esRock()
  }
  
  EatRabbitSim <-- Animal
