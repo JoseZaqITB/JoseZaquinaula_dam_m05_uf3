@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class EatRabbitSim {
     // Vars
-    public static final int CONILLS = 5, LLOPS = 5, COLUMNES = 16, FILES = 16, ROQUES = 10, AIGUA = 15;
+    public static final int CONILLS = 5, LLOPS = 3, COLUMNES = 16, FILES = 16, ROQUES = 10, AIGUA = 15;
     public static ArrayList<Animal> animals = new ArrayList<>();
     public static Tile[][] tauler = new Tile[COLUMNES][FILES];
     private int totalAnimals, torns = 0;
