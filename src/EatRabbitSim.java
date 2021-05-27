@@ -1,7 +1,6 @@
 //versió 0
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class EatRabbitSim {
@@ -40,8 +39,8 @@ public class EatRabbitSim {
         }
         totalAnimals = animals.size();
         for (Tile[] tiles : tauler) {
-            totalFoxs = Arrays.stream(tiles).filter(Tile::esFox).count();
-            totalRabbits = Arrays.stream(tiles).filter(Tile::esRabbit).count();
+            totalFoxs += Arrays.stream(tiles).filter(Tile::esFox).count();
+            totalRabbits += Arrays.stream(tiles).filter(Tile::esRabbit).count();
         }
     }
     public void mostra(){
@@ -54,12 +53,12 @@ public class EatRabbitSim {
         long foxs = 0;
         long rabbits = 0;
         for (Tile[] tiles : tauler) {
-            foxs = Arrays.stream(tiles).filter(Tile::esFox).count();
-            rabbits = Arrays.stream(tiles).filter(Tile::esRabbit).count();
+            foxs += Arrays.stream(tiles).filter(Tile::esFox).count();
+            rabbits += Arrays.stream(tiles).filter(Tile::esRabbit).count();
         }
-
         System.out.println("\uD83E\uDDE1" + animals.size() + "/" + totalAnimals +
-                "  \uD83D\uDD50" + torns + "\uD83E\uDDB4" + (totalFoxs - foxs) + "\uD83C\uDF56" + (totalRabbits-rabbits));
+                "  \uD83D\uDD50" + torns + "            \uD83E\uDDB4" + (totalFoxs - foxs) +
+                "  \uD83C\uDF56" + (totalRabbits-rabbits));
     }
     // main
     public static void main(String[] args){
@@ -77,10 +76,6 @@ public class EatRabbitSim {
         System.out.println("Has destruit tota vida a la vista, bon treball \uD83D\uDE05");
     }
     //getters and setters
-
-    public int getTotalAnimals() {
-        return totalAnimals;
-    }
 
     public Tile[][] getTauler() {
         return tauler;
