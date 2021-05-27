@@ -23,6 +23,8 @@ classDiagram
     Tile[][] tauler
     int totalAnimals
     int torns
+    long totalFoxs
+    long totalRabbits
     void iniciatliza()
     void mostra()
     void main()
