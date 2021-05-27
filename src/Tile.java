@@ -53,10 +53,10 @@ class Tile {
             case 2: grafic = "\u001B[44m"; break;
             default: grafic = "\u001B[42m"; // terra per defecte
         }
-        if(animal == null)
-            return grafic + "  " + "\033[0m"; // 2 espais per a mantindre l'alineació
         if (!string.equals(""))
             return grafic + string + "\033[0m";
+        if(animal == null)
+            return grafic + "  " + "\033[0m"; // 2 espais per a mantindre l'alineació
         return grafic + animal+ "\033[0m"; // reset, torna al color per defecte
     }
 }
