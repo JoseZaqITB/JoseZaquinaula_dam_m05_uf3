@@ -53,12 +53,8 @@ public class EatRabbitSim {
         joc.inicialitza();
         Scanner scanner = new Scanner(System.in);
         while (animals.size() > 0){
-            ArrayList<Animal> morts = new ArrayList<>(); //////PROVA!
-            for (Animal animal : animals){
-                animal.mou();
-                //joc.mostra();
-                //scanner.nextLine();
-            }
+            animals.forEach(Animal::update);
+            animals.forEach(Animal::mou);
             joc.torns ++;
             joc.mostra();
             scanner.nextLine();

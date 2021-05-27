@@ -1,9 +1,11 @@
 abstract class Animal{
     // vars
+    Tile[][] tauler;
     int x, y;
     boolean mort;
     // contructors
     public Animal(int x, int y){
+        tauler = EatRabbitSim.tauler;
         this.x = x;
         this.y = y;
         mort = false;
@@ -13,9 +15,13 @@ abstract class Animal{
         this.mort = true;
     }
     public abstract String toString();
+    public void update(){
+        if ( mort ){
+            tauler[x][y].delAnimal();
+        }
+    }
     public void mou(){
         if(mort) return;
-        Tile[][] tauler = EatRabbitSim.tauler;
         int i = (int) (Math.random() * 3) - 1 +x;
         int j = (int) (Math.random() * 3) - 1 +y;
         if(i >= 0 && i < tauler.length && j >= 0 && j < tauler[0].length &&
