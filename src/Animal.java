@@ -1,11 +1,13 @@
 abstract class Animal{
     // vars
+    EatRabbitSim game;
     Tile[][] tauler;
     int x, y;
     boolean mort;
     // contructors
-    public Animal(int x, int y){
-        tauler = EatRabbitSim.tauler;
+    public Animal(EatRabbitSim game, int x, int y){
+        this.game = game;
+        tauler = game.getTauler();
         this.x = x;
         this.y = y;
         mort = false;
@@ -13,6 +15,7 @@ abstract class Animal{
     // methods
     public void mor() {
         this.mort = true;
+        game.decreaseTotalAnimals(1);
     }
     public abstract String toString();
     public void update(){
@@ -30,5 +33,10 @@ abstract class Animal{
             tauler[i][j].setAnimal(this);
             x=i; y=j;
         }
+    }
+    //
+
+    public boolean isMort() {
+        return mort;
     }
 }

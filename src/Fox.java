@@ -2,17 +2,17 @@ class Fox extends Animal{
     //vars
     int energia = 10;
     // contructor
-    public Fox(int x, int y){ super(x, y); } // reutilitzem el constructor de la classe mare
+    public Fox(EatRabbitSim game,int x, int y){ super(game,x, y); } // reutilitzem el constructor de la classe mare
     // methods
     public void update(){
         if(energia == 0){
-            mor();
+            tauler[x][y].setString("\uD83E\uDDB4");
+            tauler[x][y].delAnimal();
         }
     }
     public void mou(){
-        Tile[][] tauler = EatRabbitSim.tauler;
         if(energia == 0){
-            tauler[x][y].setString("\uD83E\uDDB4");// eliminem les referències a aquest objecte i confiem en el// garbage collector per a destruir-lo (ja que no té referències)
+            mor();// eliminem les referències a aquest objecte i confiem en el// garbage collector per a destruir-lo (ja que no té referències)
         }else {
             int i = (int) (Math.random() * 3) - 1 + x;
             int j = (int) (Math.random() * 3) - 1 + y;
